@@ -21,7 +21,7 @@ const Game = (props: RouteComponentProps) => {
         }
 
         loadGameState();
-    }, [props.match.params]);
+    }, [props.match.params, dispatch]);
 
     return (
         <div className="game-page">

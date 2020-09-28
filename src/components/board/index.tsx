@@ -3,18 +3,13 @@ import { Grid } from 'semantic-ui-react'
 import ColumnInfo from './ColumnInfo';
 import './Board.css'
 import Cell from './Cell';
-
-const boardRange = 10;
-const rows = Array.from(Array(boardRange).keys());
-const columns = Array.from(Array(boardRange).keys());
-
-const toColumnName = (intValue: number) => String.fromCharCode(97 + intValue);
+import { getColumns, rows } from '../../util/CommonUtil';
 
 interface BoardProps {
     getCellstate: Function,
     onCellClick: Function
 }
-
+const columns = getColumns()
 const Board = ({getCellstate, onCellClick }: BoardProps) => {
 
     return (
@@ -22,11 +17,11 @@ const Board = ({getCellstate, onCellClick }: BoardProps) => {
             <Grid columns='equal'>
                 <ColumnInfo />
                 {rows.map(r => (
-                    <Grid.Row>
+                    <Grid.Row key={r}>
                         <Grid.Column> {r+1} </Grid.Column>
                         {columns.map(c => (
-                            <Grid.Column>
-                                <Cell state={getCellstate(r+1, toColumnName(c))} onClick={onCellClick} row={r+1} column={toColumnName(c)} />
+                            <Grid.Column key={r+c}>
+                                <Cell state={getCellstate(r+1, c)} onClick={onCellClick} row={r+1} column={c} />
                             </Grid.Column>
                         ))}
                     </Grid.Row>

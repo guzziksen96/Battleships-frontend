@@ -64,7 +64,7 @@ const appReducer = (
                 const coordinate = action.payload
                 const shipName = state.activeSelectShipName;
 
-                let ship = state.placedShips.filter(s => s.name == shipName)[0];
+                let ship = state.placedShips.filter(s => s.name === shipName)[0];
                 if(ship){
                     ship.shipPositions = ship.shipPositions.concat(coordinate);
                 }
@@ -72,7 +72,7 @@ const appReducer = (
                     ship = { shipPositions: [coordinate], name: shipName}
                 }
 
-                const otherShips = state.placedShips.filter(s => s.name != shipName)
+                const otherShips = state.placedShips.filter(s => s.name !== shipName)
                 const newPlacedShips = [ship].concat(otherShips);
 
                 const activeShipName = GetActiveShipName(shipName, ship.shipPositions.length);

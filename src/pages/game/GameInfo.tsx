@@ -5,7 +5,7 @@ import { GameResult } from '../../model/GameResult'
 
 const MapMessageGameResult = {
     [GameResult.Pending]: "Sunk ships:",
-    [GameResult.PlayerWon]: "You won!:",
+    [GameResult.PlayerWon]: "You won!",
     [GameResult.PlayerLost]: "You lost :(",
 }
 

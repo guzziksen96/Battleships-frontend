@@ -1,7 +1,6 @@
 import React from 'react'
 import Board from '../../components/board'
-import { useDispatch, useSelector } from "react-redux"
-import { GameState } from '../../model/GameState'
+import { useSelector } from "react-redux"
 import { AppState } from '../../store/type'
 import { selectMany } from '../../util/ArrayUtil'
 import { Coordinate } from '../../model/Coordinate'
@@ -19,19 +18,19 @@ const PlayerBoard = () => {
             return "none"
         }
         const misses = playerBoardState.missShots;
-        const missCoord = misses.filter(c => c.column == column && c.row == row)[0];
+        const missCoord = misses.filter(c => c.column === column && c.row === row)[0];
         if (missCoord) {
             return "miss"
         }
 
         const hits = playerBoardState.hitShots;
-        const hitCoord = hits.filter(c => c.column == column && c.row == row)[0];
+        const hitCoord = hits.filter(c => c.column === column && c.row === row)[0];
         if (hitCoord) {
             return "hit"
         }
 
         const playShipsPositions = selectMany(playerBoardState.ships.map(s => s.shipPositions)) as Coordinate[]
-        const selectedCoord = playShipsPositions.filter(c => c.column == column && c.row == row)[0];
+        const selectedCoord = playShipsPositions.filter(c => c.column === column && c.row === row)[0];
         if (selectedCoord) {
             return "selected"
         }

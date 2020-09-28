@@ -33,7 +33,7 @@ const Stepper = () => {
     return (
         <Step.Group ordered>
             {Ships.map((s, index) => (
-                <Step completed={index < getActiveIndex()} active={index == getActiveIndex()} >
+                <Step completed={index < getActiveIndex()} active={index === getActiveIndex()} key={index}>
                     <Step.Content>
                         <Step.Title>Place {s.name}</Step.Title>
                         <Step.Description>{s.width} width ship</Step.Description>

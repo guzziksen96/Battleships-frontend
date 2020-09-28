@@ -1,7 +1,7 @@
 import Ships from '../consts/Ships'
 
 export const GetActiveShipName = (shipName: string, currentWidth: number) => {
-    const currentShip = Ships.filter(s => s.name == shipName)[0];
+    const currentShip = Ships.filter(s => s.name === shipName)[0];
 
     if(!currentShip){
         return "";
@@ -13,7 +13,7 @@ export const GetActiveShipName = (shipName: string, currentWidth: number) => {
     else{
         const currentShipIndex = Ships.indexOf(currentShip);
 
-        if(currentShipIndex == Ships.length - 1){
+        if(currentShipIndex === Ships.length - 1){
             return "";
         }
 

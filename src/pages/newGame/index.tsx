@@ -28,7 +28,7 @@ const NewGame = () => {
 
     const getCellstate = (row: number, column: string): string => {
 
-        const selectedCoord = selectedShipPositions.filter(c => c.column == column && c.row == row)[0];
+        const selectedCoord = selectedShipPositions.filter(c => c.column === column && c.row === row)[0];
         if(selectedCoord) {
             return "selected"
         }

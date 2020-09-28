@@ -1,18 +1,16 @@
 import React from 'react'
 import { Grid } from 'semantic-ui-react'
+import { getColumns } from '../../util/CommonUtil'
 
-const boardRange = 10;
-const columns = Array.from(Array(boardRange).keys());
-
-const toColumnName = (intValue: number) => String.fromCharCode(97 + intValue).toLocaleUpperCase();
+const columns = getColumns(true)
 
 const ColumnInfo = () => {
     return (
         <Grid.Row>
             <Grid.Column />
              {columns.map(c => (
-            <Grid.Column className="column-info">
-                {toColumnName(c)}
+            <Grid.Column className="column-info" key={c}>
+                {c}
             </Grid.Column>
         ))} 
         </Grid.Row>

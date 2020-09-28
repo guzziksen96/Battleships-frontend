@@ -10,14 +10,14 @@ const Client = {
         const requestBody = {
             ships
         }
-        const response = await axios.post(baseUrl + "/api/game", requestBody);
+        const response = await axios.post<string>(baseUrl + "/api/game", requestBody);
 
         return response.data;
     },
 
     async getGameState(gameId: string): Promise<GameState> {
         
-        const response = await axios.get(baseUrl +`/api/game/${gameId}/state`);
+        const response = await axios.get<GameState>(baseUrl +`/api/game/${gameId}/state`);
 
         return response.data;
     },

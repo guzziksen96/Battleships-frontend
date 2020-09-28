@@ -39,13 +39,13 @@ const ComputerBoard = () => {
             return "none";
         }
         const misses = computerBoardState.missShots;
-        const missCoord = misses.filter(c => c.column == column && c.row == row)[0];
+        const missCoord = misses.filter(c => c.column === column && c.row === row)[0];
         if (missCoord) {
             return "miss"
         }
 
         const hites = computerBoardState.hitShots;
-        const hitCoord = hites.filter(c => c.column == column && c.row == row)[0];
+        const hitCoord = hites.filter(c => c.column === column && c.row === row)[0];
         if (hitCoord) {
             return "hit"
         }
