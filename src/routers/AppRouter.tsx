@@ -11,8 +11,6 @@ export default function AppRouter(): ReactElement {
                 <Route exact path={"/"} component={StartNewGame} />
                 <Route exact path={"/game/:id"} component={Game} />
             </Switch>
-
         </Layout>
-
     )
 }

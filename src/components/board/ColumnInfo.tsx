@@ -1,5 +1,5 @@
-import React, { ReactElement } from 'react'
-import { Grid, Segment } from 'semantic-ui-react'
+import React from 'react'
+import { Grid } from 'semantic-ui-react'
 
 const boardRange = 10;
 const columns = Array.from(Array(boardRange).keys());

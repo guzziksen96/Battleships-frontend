@@ -13,23 +13,19 @@ const ComputerBoard = () => {
     const gameId = useSelector((state: AppState) => state.gameId)
     const dispatch: Dispatch<any> = useDispatch()
 
-
     const fire = async (row: number, column: string) => {
 
         async function fireAsync(row: number, column: string) {
             const coord = { row, column } as Coordinate
             dispatch(setLoading(true))
 
-            const fireResult = await Client.fireNewShot(gameId, coord)
-            console.log(fireResult)
+            await Client.fireNewShot(gameId, coord)
+        
             const newGameState = await Client.getGameState(gameId)
-            console.log('New Game state', newGameState)
+
             dispatch(setGameState(newGameState))
 
             dispatch(setLoading(false))
-            console.log("not loading")
-
-            console.log(newGameState)
         }
         fireAsync(row, column);
 

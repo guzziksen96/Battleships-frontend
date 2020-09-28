@@ -24,8 +24,8 @@ const PlayerBoard = () => {
             return "miss"
         }
 
-        const hites = playerBoardState.hitShots;
-        const hitCoord = hites.filter(c => c.column == column && c.row == row)[0];
+        const hits = playerBoardState.hitShots;
+        const hitCoord = hits.filter(c => c.column == column && c.row == row)[0];
         if (hitCoord) {
             return "hit"
         }
@@ -38,7 +38,6 @@ const PlayerBoard = () => {
 
         return "none";
     }
-
 
     return (
         <div>

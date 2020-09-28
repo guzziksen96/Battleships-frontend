@@ -16,7 +16,7 @@ const initGameState = {
      missShots: [] as Coordinate[],
      ships: [] as PlacedShip[]
  },
- result: 0
+ result: ""
 } as GameState
 
 const initialState = {

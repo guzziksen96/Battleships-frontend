@@ -2,13 +2,11 @@ import React, { useEffect } from 'react'
 import { RouteComponentProps } from 'react-router-dom';
 import { Dispatch } from "redux"
 import './Styles.css'
-import Board from '../../components/board';
 import Client from '../../api/Client'
 import { setGameState, setGameId } from '../../store/actionCreators'
-import { useDispatch, useSelector } from "react-redux"
+import { useDispatch } from "react-redux"
 import PlayerBoard from './PlayerBoard';
 import ComputerBoard from './ComputerBoard';
-import SunkComputerShips from './GameInfo';
 import GameInfo from './GameInfo';
 
 const Game = (props: RouteComponentProps) => {
@@ -32,7 +30,6 @@ const Game = (props: RouteComponentProps) => {
             </div>
             <div className="computer-board">
                 <ComputerBoard />
-
             </div>
             <div className="info-messages">
                 <GameInfo />

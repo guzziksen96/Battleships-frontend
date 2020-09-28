@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react'
+import React from 'react'
 import { Step } from 'semantic-ui-react'
 import Ships from '../../consts/Ships'
 import { useSelector } from "react-redux"
@@ -28,8 +28,6 @@ const Stepper = () => {
         else{
             return 5;
         }
-
-        return -1;
     }
 
     return (
