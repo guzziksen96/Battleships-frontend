@@ -1,0 +1,30 @@
+.grid-wrapper {
+    max-width: 30vw;
+}
+.cell {
+    border: solid 1px black;
+    height: 30px;
+}
+
+.cell:hover {
+    cursor: pointer;
+}
+.selected {
+    background-color: darkgray;
+}
+
+.grid-wrapper .ui.grid>.row {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.grid-wrapper .ui.grid>.row>.column {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.hit {
+    background-color: red;
+}
+.miss {
+    background-color: green;
+}
