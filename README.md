@@ -1,4 +1,3 @@
- The repository contains the frontend of the solution for interview task in Guestline.
 
 ## Available Scripts
 
